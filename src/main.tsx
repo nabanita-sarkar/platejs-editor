@@ -1,12 +1,1 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-
-import App from './app/page.jsx';
-
-import '@/styles/globals.css';
-
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+export { default } from './app/page.jsx';

@@ -22,11 +22,10 @@ export default defineConfig({
       fileName: 'platejs-editor',
     },
     rollupOptions: {
-      external: ['react', 'react-dom'],
+      external: ['react'],
       output: {
         globals: {
           react: 'React',
-          'react-dom': 'ReactDOM',
         },
       },
     },
