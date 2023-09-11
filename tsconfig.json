@@ -7,7 +7,7 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": false,
-    "incremental": true,
+    "incremental": false,
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
@@ -22,7 +22,7 @@
     "strictNullChecks": true,
     "declaration": true,
     "outDir": "dist",
-    "declarationMap": true
+    "emitDeclarationOnly": true
   },
   "include": ["src"],
   "exclude": ["node_modules"],
