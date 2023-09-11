@@ -2,7 +2,7 @@
   "name": "platejs-editor",
   "description": "PlateJS Editor",
   "license": "MIT",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "private": false,
   "files": [
     "dist"
@@ -21,7 +21,10 @@
       "import": "./dist/platejs-editor.mjs",
       "require": "./dist/platejs-editor.umd.js"
     },
-    "./dist/style.css": "./dist/style.css"
+    "./dist/*.css": {
+      "import": "./dist/*.css",
+      "require": "./dist/*.css"
+    }
   },
   "sideEffects": false,
   "release": {
