@@ -19,6 +19,8 @@ import { FloatingToolbar } from '@/components/plate-ui/floating-toolbar';
 import { FloatingToolbarButtons } from '@/components/plate-ui/floating-toolbar-buttons';
 import { MentionCombobox } from '@/components/plate-ui/mention-combobox';
 
+import { TooltipProvider } from '../plate-ui/tooltip';
+
 export default function Editor() {
   const containerRef = useRef(null);
 
@@ -33,42 +35,48 @@ export default function Editor() {
     <DndProvider backend={HTML5Backend}>
       <div className="relative">
         <PlateProvider plugins={plugins} initialValue={initialValue}>
-          <FixedToolbar>
-            <FixedToolbarButtons />
-          </FixedToolbar>
+          <TooltipProvider
+            disableHoverableContent
+            delayDuration={500}
+            skipDelayDuration={0}
+          >
+            <FixedToolbar>
+              <FixedToolbarButtons />
+            </FixedToolbar>
 
-          <div className="flex">
-            <CommentsProvider users={commentsUsers} myUserId={myUserId}>
-              <div
-                ref={containerRef}
-                className={cn(
-                  'relative flex max-w-[900px] overflow-x-auto',
-                  '[&_.slate-start-area-top]:!h-4',
-                  '[&_.slate-start-area-left]:!w-[64px] [&_.slate-start-area-right]:!w-[64px]'
-                )}
-              >
-                <Plate
-                  editableProps={{
-                    autoFocus: true,
-                    className: cn(
-                      'relative max-w-full leading-[1.4] outline-none [&_strong]:font-bold',
-                      '!min-h-[600px] w-[900px] px-[96px] py-16'
-                    ),
-                  }}
+            <div className="flex">
+              <CommentsProvider users={commentsUsers} myUserId={myUserId}>
+                <div
+                  ref={containerRef}
+                  className={cn(
+                    'relative flex max-w-[900px] overflow-x-auto',
+                    '[&_.slate-start-area-top]:!h-4',
+                    '[&_.slate-start-area-left]:!w-[64px] [&_.slate-start-area-right]:!w-[64px]'
+                  )}
                 >
-                  <FloatingToolbar>
-                    <FloatingToolbarButtons />
-                  </FloatingToolbar>
+                  <Plate
+                    editableProps={{
+                      autoFocus: true,
+                      className: cn(
+                        'relative max-w-full leading-[1.4] outline-none [&_strong]:font-bold',
+                        '!min-h-[600px] w-[900px] px-[96px] py-16'
+                      ),
+                    }}
+                  >
+                    <FloatingToolbar>
+                      <FloatingToolbarButtons />
+                    </FloatingToolbar>
 
-                  <MentionCombobox items={MENTIONABLES} />
+                    <MentionCombobox items={MENTIONABLES} />
 
-                  <CursorOverlay containerRef={containerRef} />
-                </Plate>
-              </div>
+                    <CursorOverlay containerRef={containerRef} />
+                  </Plate>
+                </div>
 
-              <CommentsPopover />
-            </CommentsProvider>
-          </div>
+                <CommentsPopover />
+              </CommentsProvider>
+            </div>
+          </TooltipProvider>
         </PlateProvider>
       </div>
     </DndProvider>

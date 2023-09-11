@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 import { siteConfig } from '@/config/site';
 import { buttonVariants } from '@/components/plate-ui/button';
 import Editor from '@/components/plate/editor';
@@ -19,22 +17,22 @@ export default function IndexPage() {
         </p>
       </div>
       <div className="flex gap-4">
-        <Link
+        <a
           href={siteConfig.links.docs}
           target="_blank"
           rel="noreferrer"
           className={buttonVariants()}
         >
           Documentation
-        </Link>
-        <Link
+        </a>
+        <a
           target="_blank"
           rel="noreferrer"
           href={siteConfig.links.github}
           className={buttonVariants({ variant: 'outline' })}
         >
           GitHub
-        </Link>
+        </a>
       </div>
 
       <div className="max-w-[1336px] rounded-lg border bg-background shadow">

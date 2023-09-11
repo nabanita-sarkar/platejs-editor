@@ -71,7 +71,6 @@ export function ImageElement({
               readOnly,
             }}
           >
-            {/* eslint-disable-next-line jsx-a11y/alt-text */}
             <Image
               {...nodeProps}
               className={cn(
