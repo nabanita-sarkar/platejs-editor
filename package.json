@@ -2,7 +2,7 @@
   "name": "platejs-editor",
   "description": "PlateJS Editor",
   "license": "MIT",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "private": false,
   "files": [
     "dist"
