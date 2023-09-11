@@ -2,7 +2,7 @@
   "name": "platejs-editor",
   "description": "PlateJS Editor",
   "license": "MIT",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "private": false,
   "type": "module",
   "files": [
@@ -14,7 +14,7 @@
     "name": "platejs-editor",
     "registry": "https://registry.npmjs.org/"
   },
-  "types": "dist/src/main.d.ts",
+  "types": "dist/main.d.ts",
   "main": "dist/platejs-editor.js",
   "module": "dist/platejs-editor.umd.cjs",
   "exports": {
@@ -41,7 +41,7 @@
   ],
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build && tsc --emitDeclarationOnly",
+    "build": "vite build",
     "preview": "vite preview",
     "prepare": "vite build && tsc --emitDeclarationOnly",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives",
@@ -138,7 +138,8 @@
     "tailwindcss": "^3.3.2",
     "tsup": "^7.2.0",
     "typescript": "5.1.6",
-    "vite": "^4.4.9"
+    "vite": "^4.4.9",
+    "vite-plugin-dts": "^3.5.3"
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0"
