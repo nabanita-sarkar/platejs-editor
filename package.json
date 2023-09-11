@@ -19,6 +19,7 @@
     "dev": "vite dev",
     "build": "vite build && tsc --emitDeclarationOnly",
     "preview": "vite preview",
+    "prepare": "vite build && tsc --emitDeclarationOnly",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives",
     "lint:fix": "pnpm run lint --fix",
     "typecheck": "tsc --noEmit"
