@@ -2,8 +2,9 @@
   "name": "platejs-editor",
   "description": "PlateJS Editor",
   "license": "MIT",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "private": false,
+  "type": "module",
   "files": [
     "dist"
   ],
@@ -13,13 +14,13 @@
     "name": "platejs-editor",
     "registry": "https://registry.npmjs.org/"
   },
-  "types": "dist/types/src/main.d.ts",
-  "main": "dist/platejs-editor.umd.js",
-  "module": "dist/platejs-editor.mjs",
+  "types": "dist/src/main.d.ts",
+  "main": "dist/platejs-editor.js",
+  "module": "dist/platejs-editor.umd.cjs",
   "exports": {
     ".": {
-      "import": "./dist/platejs-editor.mjs",
-      "require": "./dist/platejs-editor.umd.js"
+      "import": "./dist/platejs-editor.js",
+      "require": "./dist/platejs-editor.umd.cjs"
     },
     "./dist/*.css": {
       "import": "./dist/*.css",
