@@ -1,13 +1,21 @@
 {
   "name": "platejs-editor",
-  "version": "0.0.1",
+  "description": "PlateJS Editor",
+  "license": "MIT",
+  "version": "0.0.2",
   "private": false,
   "files": [
     "dist"
   ],
+  "repository": "git@github.com:nabanita-sarkar/platejs-editor.git",
+  "author": "Nabanita Sarkar",
+  "publishConfig": {
+    "name": "platejs-editor",
+    "registry": "https://registry.npmjs.org/"
+  },
   "types": "dist/types/src/main.d.ts",
-  "main": "dost/platejs-editor.cjs.js",
-  "module": "dost/platejs-editor.es.js",
+  "main": "dist/platejs-editor.cjs.js",
+  "module": "dist/platejs-editor.es.js",
   "exports": {
     ".": {
       "import": "./dist/platejs-editor.es.js",
@@ -15,6 +23,18 @@
     },
     "./dist/style.css": "./dist/style.css"
   },
+  "sideEffects": false,
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
+  "keywords": [
+    "react",
+    "editor",
+    "platejs",
+    "slatejs"
+  ],
   "scripts": {
     "dev": "vite dev",
     "build": "vite build && tsc --emitDeclarationOnly",
@@ -115,6 +135,9 @@
     "tsup": "^7.2.0",
     "typescript": "5.1.6",
     "vite": "^4.4.9"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
   "pnpm": {
     "patchedDependencies": {
