@@ -25,7 +25,8 @@
     "./dist/*.css": {
       "import": "./dist/*.css",
       "require": "./dist/*.css"
-    }
+    },
+    "./dist/*.d.ts": "./dist/*.d.ts"
   },
   "sideEffects": false,
   "release": {
